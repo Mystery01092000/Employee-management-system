@@ -59,6 +59,24 @@ public class CSEdep {
             }
             else
                 System.out.println("Employee not found!");
-    }
-
+        }
+        public double getSalary(String id){
+            Employee x = findEmployee(id);
+            if(x!=null){
+                return x.getSalary();
+            }
+            System.out.println("Employee not found!");
+            return -1;
+        }
+        public void display(String id){
+            Employee x = findEmployee(id);
+            if(x!=null){
+                x.Display();
+            }
+        }
+        public void display(){
+            for(Employee x : employee){
+                x.Display();
+            }
+        }
 }

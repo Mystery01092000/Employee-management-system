@@ -21,7 +21,17 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public void Display() {
-        super.Display();
+    super.Display();
         System.out.println("Salary : "+ monthlySalary);
+    }
+
+    @Override
+    public double getSalary() {
+        return monthlySalary;
+    }
+
+    @Override
+    public void increaseSalary(double amt) throws InvalidSalaryException {
+
     }
 }
