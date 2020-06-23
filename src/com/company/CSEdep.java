@@ -29,5 +29,36 @@ public class CSEdep {
 
         }
 
+        public void addNewEmployee(String n, String i, String d, double hr, int hw){
+
+            HourlyEmployee eh = new HourlyEmployee(n,i,d,hr,hw);
+
+            employee.add(eh);
+        }
+
+        public void addNewEmployee(String n,String i,String d,double p,double s){
+
+            CommissionEmployee e = new CommissionEmployee(n,i,d,p,s);
+
+            addNewEmployee(e);
+        }
+
+        public Employee findEmployee(String id){
+            for(Employee x : employee){
+                if(x.getId().equals(id))
+                    return x;
+            }
+            System.out.println("Employee not found!");
+            return null;
+        }
+
+        public void increaseSalary(String id,double amt) throws InvalidSalaryException{
+            Employee x = findEmployee(id);
+            if(x!=null){
+                x.increaseSalary(amt);
+            }
+            else
+                System.out.println("Employee not found!");
+    }
 
 }

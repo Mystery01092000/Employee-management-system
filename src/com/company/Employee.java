@@ -46,4 +46,6 @@ public abstract class Employee {
         return id;
     }
 
+    public abstract double getSalary();
+    public abstract void increaseSalary(double amt) throws InvalidSalaryException;
 }
